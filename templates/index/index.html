@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>index</title>
+    <style>
+        .content_index{
+            display: block;
+        }
+        p.serif {
+            font-family: "Times New Roman", Times, serif;
+        }
+        .color{
+            color: red;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="color">index</div>
+
+    <ul>
+            <div class="content_index">
+            <a href="{% url "index" %}">Главная</a>
+            <li> <a href="{% url 'backend11' %}" >Chapter 11</a></li>
+                <ul>
+                    <li><div>форма регистрации и чекбокс я не робот</div></li>
+                </ul>
+            <li> <a href="{% url 'backend12' %}" >Chapter 12</a></li>
+                <ul>
+                    <li><div>вывод скидки на страницу</div></li>
+                </ul>
+            <li> <a href="{% url 'backend13' %}" >Chapter 13</a></li>
+                <ul>
+                    <li><div>удаление и js comfirm</div></li>
+                    <li><div class="color">сделать добавление товара с страницы сайта</div></li>
+                </ul>
+        <ul>
+
+
+    </div>
+</body>
+</html>

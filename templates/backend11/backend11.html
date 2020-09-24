@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Backend13</title>
+</head>
+<body>
+<div>страница регистрации</div>
+
+<h3><div>Задача 1</div></h3>
+Создать форму регистрации пользователя. Нужно в ней логин пароль и чекбокс (я не робот). Если все поля заполнены - то форма должна отправиться на обработчик в бекэнд.
+
+<h3><div>Задача 2</div></h3>
+Создать таблицу users  в базе. Обязательные поля
+<h3><div>логин </div>
+<div>пароль</div> </h3>
+ 
+<div>Сделать регистрацию пользователя так, чтобы при добавлении данных добавлися его логин , а пароль добавился бы в виде хеша. (Набор букв и символов)</div>
+<h4><div>Решение</div></h4>
+<form action="{% url 'backendout11' %}" method="post" id="myform">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <div><input name="name" placeholder="Введите имя" id='inputtel' ></div>
+    <div><input name="pass" placeholder="Введите пароль" id='inpupass' ></div>
+    <input id='mychek' type="checkbox">Я не робот<br>
+    <div>
+        <button onclick="sendTell(this)" type="button">Регистрация</button>
+    </div>
+</form>
+
+<script>
+    // вывзываем функцию sendTell(this) в ней делаем провкрку на заполненность полей если не заполнено и не поставоен чебокс вызыаем алерт иначе отправляем форму
+    function sendTell(mythis) {
+        if (document.getElementById('inputtel').value.length == 0 || document.getElementById('inpupass').value.length == 0 || document.getElementById('mychek').checked == false) {
+            alert('Поле не заполнено')
+            return false
+        }else {
+            document.getElementById('myform').submit()
+        }
+    }
+</script>
+
+</body>
+</html>

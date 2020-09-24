@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Backend13</title>
+</head>
+<body>
+<div>Страница товаров</div>
+
+<h3>Вывод скидки на страницу</h3>
+<div>
+    <h3><div>Задача 1</div></h3>
+    <p class="serif">Создать в базе данных таблицу товаров: </p>
+    <h3>id
+        <div>tovarname</div>
+        <div>price</div>
+        <div>sale</div></h3>
+    <div>Пусть будет всего  три товара у нас там.</div>
+    <div>Вывести на главной странице проекта список(массив) этих товаров из бд желательно в таблице </div>
+    <div>Напротив каждого товара должен выводиться инпут для ввода скидки  и кнопка “изменить” </div>
+
+    <h3><div>Задача 2</div></h3>
+    При нажатии на “изменить” - нужно передать в базу размер скидки, которую мы введем в инпут.
+    И перенаправить опять на главную
+</div>
+<h4><div>Решение</div></h4>
+<table border="2">
+    <tr>
+        <td>id</td>
+        <td>название</td>
+        <td>цена</td>
+        <td>скидка</td>
+        <td>действие</td>
+    </tr>
+    {% for all_goods_s in all_goods %}
+
+        <form action="/backendout12" method="post">
+            {% csrf_token %}
+
+            <tr>
+            <ul><li class="checked"><td><div>{{ all_goods_s.0 }}</div></td></li></ul>
+                <td><div>{{ all_goods_s.1 }}</div></td>
+                <td><div>{{ all_goods_s.2 }}</div></td>
+                <td><div>{{ all_goods_s.3 }}</div></td>
+                <td><input type="text" name="valtext"><button value="{{ all_goods_s.0 }}" name="id" >Редактировать</button></td>
+            </tr>
+        </form>
+    {% endfor %}
+</table>
+
+</body>
+</html>
