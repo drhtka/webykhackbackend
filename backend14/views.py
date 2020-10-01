@@ -15,11 +15,9 @@ class Backend14View(View):
 class Backend14OutView(View):
     def post(self, request):
         name_search = request.POST.get('name')
-
         name_filter = CreateDb.objects.filter(tovarname=name_search).values_list('id', 'tovarname', 'price', 'sale')
         print(len(name_filter))
-
-        if len(name_search) != 0:
+        if len(name_filter) != 0:
             return render(request, 'backend14/backendout14.html', {'name_filter': name_filter})
         else:
             return render(request, 'backend14/backenderror14.html')
