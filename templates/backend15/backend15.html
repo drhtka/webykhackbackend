@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+{% block title %}<title>Backend 15</title>{% endblock title %}
+{% block content %}
+    <style>
+        div{
+            text-align: left;
+            word-wrap: normal;
+        }
+    </style>
+    <div>Страница товаров</div>
+
+    <h2>Удаление из базы данных по нажатию на кнопки</h2>
+    <div>
+        <h3><div>Задача 1</div></h3>
+        <p class="serif">Создать в базе данных таблицу товаров: </p>
+        <h3>id
+            <div>tovarname</div>
+            <div>price</div>
+            <div>sale</div></h3>
+        <div>Пусть будет всего  три товара у нас там.</div>
+        <div>Но у каждого записано название категории (напр производитель apple, Samsung и и д) <br>
+             Вывести на главной странице проекта список(массив) этих товаров из бд <br>
+            На главной сделать также 2 чебокса и напротив каждого вывести имя производителя <br>
+            • кнопку фильтровать<br>
+
+        </div>
+
+        <h3><div>Задача 2</div></h3>
+        При выборе чекбокса (производителя) нужно на след странице вывести все товары<br>
+        этого производителя - напр если выбираем apple - на след странице должны вывестись iPhone <br>
+    </div>
+    <h4><div>Решение</div></h4>
+
+    <table border="2">
+        <tr>
+            <td>id</td>
+            <td>название</td>
+            <td>цена</td>
+            <td>скидка</td>
+            <td>категория</td>
+
+        </tr>
+        {% for all_goods_s in all_goods %}
+
+
+            <tr>
+                <td>{{ all_goods_s.0 }}</td>
+                <td>{{ all_goods_s.1 }}</td>
+                <td>{{ all_goods_s.2 }}</td>
+                <td>{{ all_goods_s.3 }}</td>
+                <td>{{ all_goods_s.4 }}</td>
+            </tr>
+
+        {% endfor %}
+
+    </table>
+    <form action="/backendout15" method="post">
+        {% csrf_token %}
+        <div><input type="checkbox" name="cat" value="Apple" >
+            Apple</div>
+        <div><input type="checkbox" name="cat" value="Samsung" >
+            Samsung</div>
+        <div><input type="checkbox" name="cat" value="Lenovo" >
+            Lenovo</div>
+        <div><input type="checkbox" name="cat" value="HTC" >
+            HTC</div>
+        <div type="button" value="" ></div>
+        <button>Фильтровать</button>
+    </form>
+
+
+{% endblock content %}

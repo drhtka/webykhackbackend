@@ -22,4 +22,4 @@ class Backend11OutView(View):
         seve_site.save()# заносим в базу
         return render(request, 'backend11/backendout11.html')
 
-        #return render(request, 'backend13/backend11.html', {'all_goods': my_return})
+        #return render(request, 'backend13/backend10.html', {'all_goods': my_return})

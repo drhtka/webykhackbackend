@@ -19,4 +19,4 @@ class Backend12OutView(View):
         todo_id = CreateDb.objects.values_list('id', 'tovarname', 'price', 'sale')
         return render(request, 'backend12/backend12.html', {'all_goods': todo_id})
 
-        #return render(request, 'backend13/backend11.html', {'all_goods': my_return})
+        #return render(request, 'backend13/backend10.html', {'all_goods': my_return})

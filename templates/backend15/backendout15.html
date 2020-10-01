@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block title %}<title>BackendOut 15</title>{% endblock title %}
+{% block content %}
+    {% for chekbox_filter_s in chekbox_filter %}
+        <div>Номер: {{ chekbox_filter_s.0 }}</div>
+        <div>Название: {{ chekbox_filter_s.1 }}</div>
+        <div>Цена: {{ chekbox_filter_s.2 }}</div>
+        <div>Скидка: {{ chekbox_filter_s.3 }}</div>
+        <div>Категория: {{ chekbox_filter_s.4 }}</div>
+    {% endfor %}
+
+{% endblock content %}
+

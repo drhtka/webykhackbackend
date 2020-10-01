@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% block title %}<title>Backend 10</title>{% endblock title %}
+{% block content %}
+<style>
+div{
+    text-align: left;
+    word-wrap: normal;
+}
+</style>
+    <div>страница 10 Корзина/div></div>
+
+<h3><div>Задача 1</div></h3>
+
+    Есть массив или массив объектов оформленных покупок:<br>
+    [[‘kivi’,25],<br>
+    [‘apple’,30],<br>
+    [‘banana’,25],] <br>
+    вывести этот массив на страницу в виде списка покупки, которую вот-вот совершим, посчитав общую сумму покупки
+
+<h3><div>Задача 2</div></h3>
+Создать таблицу goods в базе.
+ 
+<div>На js-front-end сделать массив номеров дисконтных карт<br>
+    [ ‘4351688763’,<br>
+    ‘4351686767’,<br>
+    ‘4351688721’,]  <br>
+    Сделать кнопку “купить” и <br>
+    сделать под списком покупки еще и инпут (введите номер дисконтной карты).<br>
+    Если юзер введет правильно номер дисконтной карты - то общая сумма товаров должна пересчитаться со скидкой в 5%,<br>
+    если номер не подойдет - должна высветиться ошибка “неверный номер дисконта”</div>
+<h4><div>Решение</div></h4>
+<div class="content">
+<ul>
+{% for backend10_s in beckend10 %}
+<li><div>{{ backend10_s.1 }}</div>
+    <div>{{ backend10_s.2 }}</div>
+<div type="text" class="'btn btn-danger haer2" onclick="addCard({{ backend10_s.o }})"></div>
+</li>
+{% endfor %}
+сумма:
+<div class="divSumm">{{ y_sum }}</div>
+</ul>
+<input class="discont">
+<button onclick="chekDiscont()">Проверить</button>
+
+</div>
+
+    <script>
+var myarr = ['4351688763', '4351686767', '4351688721' ]
+    function chekDiscont() {
+    my_disc = document.getElementsByClassName('discont')[0].value
+        for (item of myarr){
+            if (item == my_disc){
+                let tmp_summ = document.getElementsByClassName('divSumm')[0].innerHTML
+                let perceent = Number(tmp_summ) * 0.05
+                let difference = tmp_summ - perceent
+                document.getElementsByClassName('divSumm')[0].innerHTML = difference
+            }
+        else{
+            alert('не верный номер карты')
+            }
+            break
+    }
+}
+</script>
+
+{% endblock content %}

@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block title %}<title>BackendOut 14</title>{% endblock title %}
+{% block content %}
+
+<div><h3><p class="xlarge center">Описание товаров</p></h3></div>
+<ul id = "myUL">
+
+    <div>Номер: {{ name_filter.0.0 }}</div>
+    <div>Название: {{ name_filter.0.1 }}</div>
+    <div>Цена: {{ name_filter.0.2 }}</div>
+    <div>Просмтотры: {{ name_filter.0.3 }}</div>
+
+</ul>
+{% endblock content %}
+
