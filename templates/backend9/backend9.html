@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% block title %}<title>Backend 9</title>{% endblock title %}
+{% block content %}
+    <style>
+        div{
+            text-align: left;
+            word-wrap: normal;
+        }
+    </style>
+    <div>Страница товаров</div>
+
+    <h2>Корзина JS localStorage</h2>
+    <div>
+        <h3><div>Задача 1</div></h3>
+
+        <div>Есть три товара на странице, в виде тегов див и кнопкой сердечка. <br>
+        При нажатии на эту кнопку вам нужно сделать добавление товаров в корзину желаний - т е в localStorage. <br>
+            Помните, что localStorage умеет помнить только строки и не умеет массивы.</div>
+        <h3><div>Задача 2</div></h3>
+        <div>Пусть будет всего  три товара у нас там.</div>
+        <div>После добавления в корзину желаний нам нужно послать список этих товаров в бекэнд <br>
+             Желательно заранее заготовить кнопку в форме  “перейти в лк” и через нее передать), а <br>
+             там записать уже в сессию в виде настоящего массива. <br>
+            Соответственно из него и вывести результат на новой странице. <br>
+
+        </div>
+
+
+    </div>
+    <h4><div>Решение</div></h4><br>
+<ul>
+{%  for beckend9_s in beckend9 %}
+
+    <li><div>{{ beckend9_s.0 }} - {{ beckend9_s.1 }}</div>
+    <button type="button" value="{{ beckend9_s.0 }}" id="id" onclick="addCard({{ beckend9_s.0 }})">&#128154;</button></li>
+    {% endfor %}
+    <form action="/backendout9" method="post">
+        {% csrf_token %}
+        <input type="hidden" id="datacard" name="datacard">
+        <button>Отправить</button>
+    </form>
+    </ul>
+
+    <script>
+    my_arr = []
+    function addCard(id) {
+        my_arr.push(id)
+        localStorage.setItem('card', JSON.stringify(my_arr))
+        document.getElementById('datacard').value=JSON.stringify(my_arr)
+    }
+    </script>
+{% endblock content %}
