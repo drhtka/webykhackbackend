@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block title %}<title>Backend 8</title>{% endblock title %}
+{% block content %}
+    <style>
+        div{
+            text-align: left;
+            word-wrap: normal;
+        }
+    </style>
+    <div>Страница дел</div>
+
+    <h3>Редактирование в тодо</h3>
+    <div>
+        <h4><div>Задача 1</div></h4>
+        <p class="serif">Создать в базе данных таблицу товаров: </p>
+
+        <div>[[0,'помыть посуду'], [1,'все-таки выучить html'], [2, 'Сделать домашку'], [3,'создать сайт']]</div>
+
+
+        </div>
+
+        <h4><div>Задача 2</div></h4>
+    Сделать так чтобы при нажатии на редактировать -<br>
+    перевести на страницу редактирования названия именно этого задания, и сохранить изменения.<br>
+    Так должно быть с любой задачей<br>
+    </div>
+    <h4><div>Решение</div></h4>
+
+    <table>
+    {% for my_array_s in my_array%}
+        <form action="/backendedit8" method="post">
+        {% csrf_token %}
+        <tr>
+            <td>{{ my_array_s.1 }}</td><div>
+            <td><button value="{{ my_array_s.0 }}" name="id" style="margin-left: 10px;">Редактировать</button></td></div>
+        </tr>
+        </form>
+    {% endfor %}
+    </table>
+
+{% endblock content %}

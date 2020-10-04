@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block title %}<title>BackendEdit 8</title>{% endblock title %}
+{% block content %}
+
+
+    <h3><div>Страница редактирования</div></h3>
+        <div>Номер: {{ out_array.0 }}</div>
+        <div>Редактируем: {{ out_array.1 }}</div>
+    <form action="/backendout8" method="post">
+        {% csrf_token %}
+    <input name="edit" value="{{ out_array.1 }}">
+    <input value="{{ out_array.0 }}" type="hidden" name="id">
+    <button>Сохранить</button>
+    </form>
+{% endblock content %}
