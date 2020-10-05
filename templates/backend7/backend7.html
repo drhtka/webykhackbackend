@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block title %}<title>Backend 7</title>{% endblock title %}
+{% block content %}
+    <div>Страница дел</div>
+
+    <h2>Удаление из сессии</h2>
+    <div>
+        <h3><div>Задача 1</div></h3>
+        <p> Есть массив задач в сессии, вывести его на странице и к каждому </p>
+        <h3><div>my_array = [[0,'помыть посуду'], [1,'выиграть турнир'], [2,'Сделать домашку']]</div></h3>
+
+        <h3><div>Задача 2</div></h3>
+        Сделать так чтобы при нажатии на удалить задания можно было его <br>
+        удалить и сразу же вернуться на эту страницу и увидеть список оставшихся задач <br>
+    </div>
+    <h4><div>Решение</div></h4>
+    <div>
+        {% for my_array_s in my_array%}
+        <form action="/backenddel7" method="post">
+        {% csrf_token %}
+
+        <li>{{ my_array_s.1 }}</li>
+        <button value="{{ my_array_s.0 }}" name="id">удалить</button>
+        </form>
+    {% endfor %}
+    </div>
+{% endblock content %}
