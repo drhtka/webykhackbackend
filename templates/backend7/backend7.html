@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block title %}<title>Backend 7</title>{% endblock title %}
 {% block content %}
-    <div>Страница дел</div>
+    <div>Страница задач</div>
 
     <h2>Удаление из сессии</h2>
     <div>
@@ -14,14 +14,25 @@
         удалить и сразу же вернуться на эту страницу и увидеть список оставшихся задач <br>
     </div>
     <h4><div>Решение</div></h4>
-    <div>
+
+        <table border="2">
+            <tr>
+
+                <td>название</td>
+                <td>удалить</td>
+
+
+            </tr>
         {% for my_array_s in my_array%}
         <form action="/backenddel7" method="post">
         {% csrf_token %}
-
-        <li>{{ my_array_s.1 }}</li>
-        <button value="{{ my_array_s.0 }}" name="id">удалить</button>
+            <tr>
+        <td>{{ my_array_s.1 }}</td>
+    <td><button value="{{ my_array_s.0 }}" name="id">удалить</button></td>
         </form>
+            </tr>
     {% endfor %}
-    </div>
+
+
+    </table>
 {% endblock content %}
