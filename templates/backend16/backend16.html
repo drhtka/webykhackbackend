@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% block title %}<title>Backend 16</title>{% endblock title %}
+{% block content %}
+    <style>
+        div{
+            text-align: left;
+            word-wrap: normal;
+        }
+    </style>
+    <div>Страница товаров</div>
+
+    <h2>Фильтрация при двух условиях</h2>
+    <div>
+        <h3><div>Задача 1</div></h3>
+        <p class="serif">Создать в базе данных таблицу товаров: </p>
+        <h4>id
+            <div>tovarname</div>
+            <div>price</div>
+            <div>sale</div></h4>
+            <div>category</div></h3>
+        <div>Пусть будет всего  три товара у нас там.</div>
+        <div> Вывести на главной странице проекта список(массив) этих товаров из бд <br>
+            На главной сделать также 2 инпута для ввода начальной цены и конечной  <br>
+            • кнопку фильтровать<br>
+
+        </div>
+
+        <h3><div>Задача 2</div></h3>
+        Если цена первая не выбрана - мы должны выводить товары стоимостью от 0 <br>
+        Если не введена макс сумма - выводим товары, стоимостью до макс цифры вашего товара. <br>
+    </div>
+    <h4><div>Решение</div></h4>
+
+    <table border="2">
+        <tr>
+            <td>id</td>
+            <td>название</td>
+            <td>цена</td>
+            <td>скидка</td>
+            <td>категория</td>
+
+        </tr>
+        {% for all_goods_s in all_goods %}
+
+
+            <tr>
+                <td>{{ all_goods_s.0 }}</td>
+                <td>{{ all_goods_s.1 }}</td>
+                <td>{{ all_goods_s.2 }}</td>
+                <td>{{ all_goods_s.3 }}</td>
+                <td>{{ all_goods_s.4 }}</td>
+            </tr>
+
+        {% endfor %}
+
+    </table>
+    <form action="/backendout16" method="post">
+        {% csrf_token %}
+        <div><input type="text" name="mini" value="" placeholder="От" pattern="\d*"/>
+            начальная цена</div>
+        <div><input type="text" name="maxi" value="" placeholder="До" pattern="\d*"/>
+            конечная цена</div>
+
+        <button>Фильтровать</button>
+    </form>
+
+
+{% endblock content %}

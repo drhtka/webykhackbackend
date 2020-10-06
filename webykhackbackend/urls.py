@@ -28,6 +28,7 @@ from backend12.views import Backend12View, Backend12OutView
 from backend13.views import Backend13View, Backend13OutView
 from backend14.views import Backend14View, Backend14OutView
 from backend15.views import Backend15View, Backend15OutView
+from backend16.views import Backend16View, Backend16OutView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -63,4 +64,7 @@ urlpatterns = [
 
     path('backend15/', Backend15View.as_view(), name='backend15'),
     path('backendout15', Backend15OutView.as_view(), name='backendout15'),
+
+    path('backend16/', Backend16View.as_view(), name='backend16'),
+    path('backendout16', Backend16OutView.as_view(), name='backendout16'),
 ]
