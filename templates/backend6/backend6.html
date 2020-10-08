@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% block title %}<title>Backend 6</title>{% endblock title %}
+{% block content %}
+    <div>Страница товаров</div>
+
+    <h2>Поиск товара в сессии</h2>
+    <div>
+        <h3><div>Задача 1</div></h3>
+        <div> Есть массив объектов или список справочников (для django) </div>
+        <div>Мы будем сегодня делать поиск товара. </div>
+        <div>Итак в любом приложении сперва пишем этот массив объектов в сессию:</div>
+        <h4><div>my_array = [[1, 'iphone 7', 300, 0],<br>
+            [2, 'iphone 8', 400, 1],<br>
+            [3, 'iphone X', 600, 0],<br>
+            [2, 'iphone 7plus', 600, 1],<br>
+            [3, 'iphone 6 plus', 600, 0],<br>
+            ]</div></h4>
+
+        <h3><div>Задача 2</div></h3>
+        Данные отправятся на обработчик в бекэнд, в котором нам нужно узнать : <br>
+        Если товар есть в списке - то его нужно вывести на другой странице. <br>
+        Т е имя , название и цену со словами: <br>
+        Ура вы искали этот товар? <br>
+
+        Но ….. если мы не угадали - то выводим текст : <br>
+        "Товара с таким именем - не найдено!" <br>
+    </div>
+    <h4><div>Решение</div></h4>
+
+        <table border="2">
+            <tr>
+
+                <td>номер</td>
+                <td>название</td>
+                <td>цена</td>
+
+            </tr>
+        {% for my_array_s in my_array%}
+
+            <tr>
+                <td>{{ my_array_s.0 }}</td>
+                <td>{{ my_array_s.1 }}</td>
+                <td>{{ my_array_s.2 }}</td>
+
+            </tr>
+    {% endfor %}
+    </table>
+    <form action="/backendout6" method="post">
+        {% csrf_token %}
+    <input type="text" value="" name="name_phone"  placeholder="Введите название">
+    <button>искать</button>
+    </form>
+{% endblock content %}
