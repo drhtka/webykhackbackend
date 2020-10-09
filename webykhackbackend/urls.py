@@ -19,6 +19,7 @@ from django.urls import path
 from index.views import IndexView
 
 from backend1.views import Backend1View, Backend1OutView
+from backend5.views import Backend5View, Backend5OutView
 from backend6.views import Backend6View, Backend6OutView
 from backend7.views import Backend7View, BackendDel7View
 from backend8.views import Backend8View, Backend8OutView, BackendEdit8View
@@ -37,6 +38,9 @@ urlpatterns = [
 
     path('backend1/', Backend1View.as_view(), name='backend1'),
     path('backendout1/', Backend1OutView.as_view(), name='backendout1'),
+
+    path('backend5/', Backend5View.as_view(), name='backend5'),
+    path('backendout5/', Backend5OutView.as_view(), name='backendout5'),
 
     path('backend6/', Backend6View.as_view(), name='backend6'),
     path('backendout6', Backend6OutView.as_view(), name='backendout6'),
