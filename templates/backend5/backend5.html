@@ -48,7 +48,7 @@
                 <td style="text-align: left"><a href="{% url 'backendout5' %}?i={{ my_array_s.0 }}">{{ my_array_s.1 }}</a></td>
                 <td style="text-align: center">{{ my_array_s.2 }}</td>
                 <td style="text-align: center">{{ my_array_s.3 }}</td>
-                <td style="text-align: left"><a href="http://127.0.0.1:8050/backendout5?i={{ my_array_s.0 }}">Подробнее</a></td>
+                <td style="text-align: left"><a href="{% url 'backendout5' %}?i={{ my_array_s.0 }}">Подробнее</a></td>
 
             </tr>
     {% endfor %}

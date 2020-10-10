@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'backend1.apps.Backend1Config',
+    'backend4.apps.Backend4Config',
     'backend5.apps.Backend5Config',
     'backend6.apps.Backend6Config',
     'backend7.apps.Backend7Config',
