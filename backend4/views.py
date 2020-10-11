@@ -14,14 +14,7 @@ class Backend4View(View):
         tmp_my_array = [{'id': 1, 'name': 'iphone7 ', 'price': 700},
                     {'id': 3, 'name': 'iphone6 ', 'price': 400},
                     {'id': 2, 'name': 'iphoneX ', 'price': 600}]
-        # append_ses = []
-        # for tmp_my_array_s in tmp_my_array:
-        #     print(tmp_my_array_s)
-        # append_ses.append(tmp_my_array_s)
-        # print(append_ses)
-        # request.session['my_list'] = append_ses
-        # print('ses')
-        # print(request.session['my_list'])
+
         request.session['my_list'] = [tmp_my_array]
         #print(request.session['my_list'][0])
         return render(request, 'backend4/backend4.html', {'my_array': request.session['my_list'][0]})

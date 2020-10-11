@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}<title>Backend 3</title>{% endblock title %}
+{% block content %}
+
+    <style>
+        .content_back3{
+            display: block;
+        }
+        .img_todo{
+            margin-top: 30px;
+        }
+
+
+    </style>
+    <div class="content_back3">
+    <div>Страница дел. ToDo list</div>
+
+    <h2>Сортировка из сессии</h2>
+    <div>
+        <h3><div>Задача 1</div></h3>
+        <div> Сегодня первой задачкой будет сверстать todoList. </div>
+        <div class="img_todo"><img src='{% static "backend3/img/2020-10-11_063542.jpg" %}' height="200" width="350" alt="imag"></div>
+
+        </div>
+
+        <h3><div>Задача 2</div></h3>
+        Добавление задач в список <br>
+        Сделать список задач и добавление новых задач + форму с инпутом и  <br>
+        полетели в бекэнд и в сессии переписали товары в  <br>
+        кнопкой при вводе. В инпут нужно ввести новую задачу , по нажатию на <br>
+        кнопку - она должна добавить задачу в общий список.<br>
+
+
+    </div>
+    <h4><div>Решение</div></h4>
+
+        <table border="1">
+            <tr>
+
+                <td style="text-align: center; width: 330px;">Задача</td>
+            </tr>
+        {% for my_array_s in my_array%}
+{#            {{ my_array_s }} <a href="{% url 'backendout4' %}?i={{ my_array_s.id }}"></a>#}
+            <tr>
+                <td style="text-align: center; width: 200px;"><div>{{ my_array_s.0 }}</div></td>
+
+            </tr>
+            {% endfor %}
+    </table>
+<form action="/backendout3" method="get">
+    <input style="text-align: center; width: 280px;" name="text" type="text" placeholder="Внести задачу" >
+    <button>Add</button>
+</form>
+
+    </div>
+{% endblock content %}

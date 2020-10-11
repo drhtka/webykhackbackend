@@ -14,11 +14,15 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from django.conf import settings
+from django.conf.urls.static import static
+
 from django.contrib import admin
 from django.urls import path
 from index.views import IndexView
 
 from backend1.views import Backend1View, Backend1OutView
+from backend3.views import Backend3View, Backend3OutView
 from backend4.views import Backend4View, Backend4OutView
 from backend5.views import Backend5View, Backend5OutView
 from backend6.views import Backend6View, Backend6OutView
@@ -39,6 +43,9 @@ urlpatterns = [
 
     path('backend1/', Backend1View.as_view(), name='backend1'),
     path('backendout1/', Backend1OutView.as_view(), name='backendout1'),
+
+    path('backend3/', Backend3View.as_view(), name='backend3'),
+    path('backendout3', Backend3OutView.as_view(), name='backendout3'),
 
     path('backend4/', Backend4View.as_view(), name='backend4'),
     path('backendout4', Backend4OutView.as_view(), name='backendout4'),
@@ -79,4 +86,6 @@ urlpatterns = [
 
     path('backend16/', Backend16View.as_view(), name='backend16'),
     path('backendout16', Backend16OutView.as_view(), name='backendout16'),
-]
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

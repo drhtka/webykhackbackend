@@ -145,6 +145,13 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "backend3/static"),
+    #os.path.join(BASE_DIR, "static/bootstrap"),
+    # os.path.join(BASE_DIR, 'static/main/img'),
+
+]
+
 STATICFILES_FINDERS = (
 
     "django.contrib.staticfiles.finders.FileSystemFinder",

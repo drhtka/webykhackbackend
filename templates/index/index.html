@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block content %}
     {% block title %}<title>index</title>{% endblock title %}
@@ -20,6 +21,11 @@
 
     <ul>
             <div class="content_index">
+
+            <li> <a href="{% url 'backend3' %}" >Chapter 3</a></li>
+            <ul>
+                <li><div>Добавление задач в список todo. Сессии Django</div></li>
+            </ul>
 
             <li> <a href="{% url 'backend4' %}" >Chapter 4</a></li>
             <ul>
