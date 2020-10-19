@@ -11,7 +11,7 @@ class Backend11View(View):
         return render(request, 'backend11/backend11.html')
 
 class Backend11OutView(View):
-    # удаляем и выводим на страницу
+    # выводим на страницу
     def post(self, request):
         import hashlib
         site_users = request.POST.get('name')
@@ -20,6 +20,10 @@ class Backend11OutView(View):
         final_ph = hashed_password.hexdigest()
         seve_site = CreatreUser(login_users=site_users, paass_users=final_ph)# заносим в базу
         seve_site.save()# заносим в базу
-        return render(request, 'backend11/backendout11.html')
+
+
+
+        return render(request, 'backend11/backendout11.html', {'site_users': site_users, 'site_pass': site_pass})
 
         #return render(request, 'backend13/backend10.html', {'all_goods': my_return})
+

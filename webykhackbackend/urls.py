@@ -22,6 +22,7 @@ from django.urls import path
 from index.views import IndexView
 
 from backend1.views import Backend1View, Backend1OutView
+from backend2.views import Backend2View, Backend2OutView
 from backend3.views import Backend3View, Backend3OutView
 from backend4.views import Backend4View, Backend4OutView
 from backend5.views import Backend5View, Backend5OutView
@@ -32,10 +33,11 @@ from backend9.views import Backend9View, Backend9OutView
 from backend10.views import Backend10View, Backend10OutView
 from backend11.views import Backend11View, Backend11OutView
 from backend12.views import Backend12View, Backend12OutView
-from backend13.views import Backend13View, Backend13OutView
+from backend13.views import Backend13View, Backend13OutView, BackCreateProd13
 from backend14.views import Backend14View, Backend14OutView
 from backend15.views import Backend15View, Backend15OutView
 from backend16.views import Backend16View, Backend16OutView
+from backend17.views import Backend17View, Backend17OutView, Backend17EditView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -43,6 +45,9 @@ urlpatterns = [
 
     path('backend1/', Backend1View.as_view(), name='backend1'),
     path('backendout1/', Backend1OutView.as_view(), name='backendout1'),
+
+    path('backend2/', Backend2View.as_view(), name='backend2'),
+    path('backendout2', Backend2OutView.as_view(), name='backendout2'),
 
     path('backend3/', Backend3View.as_view(), name='backend3'),
     path('backendout3', Backend3OutView.as_view(), name='backendout3'),
@@ -77,6 +82,7 @@ urlpatterns = [
 
     path('backend13/', Backend13View.as_view(), name='backend13'),
     path('backendout13/', Backend13OutView.as_view(), name='backendout13'),
+    path('backcreate13/', BackCreateProd13.as_view(), name='backcreate13'),
 
     path('backend14/', Backend14View.as_view(), name='backend14'),
     path('backendout14/', Backend14OutView.as_view(), name='backendout14'),
@@ -86,6 +92,11 @@ urlpatterns = [
 
     path('backend16/', Backend16View.as_view(), name='backend16'),
     path('backendout16', Backend16OutView.as_view(), name='backendout16'),
+
+    path('backend17/', Backend17View.as_view(), name='backend17'),
+    path('backendout17', Backend17OutView.as_view(), name='backendout17'),
+    path('backendedit17', Backend17EditView.as_view(), name='backendedit17'),
+
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

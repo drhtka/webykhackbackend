@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+{% block title %}<title>Backend 17</title>{% endblock title %}
+{% block content %}
+    <style>
+        div{
+            text-align: left;
+            word-wrap: normal;
+        }
+    </style>
+    <div>Страница товаров</div>
+
+    <h2>Фильтрация при двух условиях</h2>
+    <div>
+        <h3><div>Задача 1</div></h3>
+        <p class="serif">Создать в базе данных таблицу товаров: </p>
+        <h4>
+            <div>id</div>
+            <div>tovarname</div>
+            <div>price</div>
+            <div>sale</div>
+            <div>category</div></h4>
+
+        <div>Пусть будет всего  три товара у нас там.</div>
+        <div> Вывести на главной странице проекта список(массив) этих товаров из бд <br>
+            На главной сделать также 2 инпута для ввода начальной цены и конечной  <br>
+            • кнопку фильтровать<br>
+            Сделать чекбокс на выбор производителя. <br>
+            Т е нам нужно чтобы можно было фильтронуть производителя и цену в нем<br>
+            Например я хочу товары apple но с ценовым диапазоном от 300 до 1400 $<br>
+            кнопку фильтровать
+
+        </div>
+
+        <h3><div>Задача 2</div></h3>
+        создать страницу , на которой можно было бы менять название категории товара + кнопка  <br>
+        “сохранить изменения”. По ее нажатию делаем сохранение названия конкретной категории <br>
+        товара в базе.
+    </div>
+    <h4><div>Решение</div></h4>
+
+    <table border="2">
+        <tr>
+            <td>id</td>
+            <td>название</td>
+            <td>цена</td>
+            <td>скидка</td>
+            <td>категория</td>
+
+        </tr>
+        {% for all_goods_s in all_goods %}
+            <tr>
+                <td>{{ all_goods_s.0 }}</td>
+                <td>{{ all_goods_s.1 }}</td>
+                <td>{{ all_goods_s.2 }}</td>
+                <td>{{ all_goods_s.3 }}</td>
+                <td>{{ all_goods_s.4 }}</td>
+                <form action="/backendedit17" method="post">
+                    <td><div><input type="text" name="edit_name" value="" placeholder="новая категория" /></div></td>
+                    <td>
+                        {% csrf_token %}
+                        <button value="{{ all_goods_s.4 }}" name="name"> Сохранить изменения</button></li>
+
+                    </td>
+                </form>
+            </tr>
+        {% endfor %}
+
+    </table>
+    <form action="/backendout17" method="post">
+        {% csrf_token %}
+        <div><input type="checkbox" name="cat" value="Apple" >
+            Apple</div>
+        <div><input type="checkbox" name="cat" value="Samsung" >
+            Samsung</div>
+        <div><input type="checkbox" name="cat" value="Lenovo" >
+            Lenovo</div>
+        <div><input type="checkbox" name="cat" value="HTC" >
+            HTC</div>
+        <div type="button" value="" ></div>
+
+        <div><input type="text" name="mini" value="" placeholder="От" pattern="\d*"/>
+            начальная цена</div>
+        <div><input type="text" name="maxi" value="" placeholder="До" pattern="\d*"/>
+            конечная цена</div>
+
+        <button>Фильтровать</button>
+
+    </form>
+
+
+{% endblock content %}

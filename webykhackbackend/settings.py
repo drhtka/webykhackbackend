@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'backend1.apps.Backend1Config',
+    'backend2.apps.Backend2Config',
+    'backend3.apps.Backend3Config',
     'backend4.apps.Backend4Config',
     'backend5.apps.Backend5Config',
     'backend6.apps.Backend6Config',
@@ -52,6 +54,7 @@ INSTALLED_APPS = [
     'backend14.apps.Backend14Config',
     'backend15.apps.Backend15Config',
     'backend16.apps.Backend16Config',
+    'backend17.apps.Backend17Config',
     'index.apps.IndexConfig',
 ]
 

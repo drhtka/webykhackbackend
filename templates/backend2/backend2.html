@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}<title>Backend 2</title>{% endblock title %}
+{% block content %}
+
+    <style>
+        .content_back3{
+            display: block;
+        }
+        .img_todo{
+            margin-top: 30px;
+        }
+
+
+    </style>
+    <div class="content_back3">
+    <div>Страница Ввода пароля.</div>
+
+    <h2>Проверка пароля</h2>
+    <div>
+        <h3><div>Задача 1</div></h3>
+        <div> Сегодня первой задачкой будет сверстать картинку и поле для ввода ключа доступа . </div>
+        <div class="img_todo"><img src='{% static "backend3/img/2020-10-11_063542.jpg" %}' height="200" width="350" alt="imag"></div>
+
+        </div>
+
+        <h3><div>Задача 2</div></h3>
+        Сделать форму ввода пароль(ключа) , но пароль  -  динамический.  <br>
+        При отправке логина пароля, нужно на бэкэнд сделать проверку -<br>
+        Если пароль == одному из паролей в массиве паролей<br>
+        arPass  = [6574543, 8790431, 7273654]<br>
+        - то пересылаем на страницу со словами <br>
+        Ув участник - вы выиграли подписку на тренинг по программированию!!!!<br>
+        Иначе - вернуть юзера на предыдущую страницу и подсветить под  паролем<br> текст “неверный ключ активации”<br>
+        Правильный Динамический пароль для вас 7273654<br>
+        Можно использовать бекенд + сессии или аякс или ну уже на крайний случай (если не успеваете) <br>
+        - чистый js на фронте - но это небезопасно!!!<br>
+
+
+    </div>
+    <h4><div>Решение</div></h4>
+
+        <table border="1">
+            <tr>
+
+                <td style="text-align: center; width: 330px;">Доступные пароли</td>
+            </tr>
+
+    </table>
+<form action="/backendout2" method="post">
+{% csrf_token %}
+    <input style="text-align: center; width: 280px;" name="text" type="text" placeholder="Ввведите пароль" >
+    <button>Проверить</button>
+</form>
+{{ real_pass }}
+    </div>
+{% endblock content %}

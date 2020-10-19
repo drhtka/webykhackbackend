@@ -2,6 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <style>
+.content{
+    display: block;
+}
+    </style>
     <title>Backend13</title>
 </head>
 <body>
@@ -20,13 +25,14 @@
     <div>Напротив каждого товара делаем кнопку -крестик </div>
 
     <h3><div>Задача 2</div></h3>
-    При нажатии на “удалить” - нужно вывести сообщение «вы уверены что хотите удалить этот товар?”
-    (В этом поможет функция confirm)
-    Читаем про конфирм https://learn.javascript.ru/alert-prompt-confirm
-    Если человек ответит да - то мы делаем удаление именно этого товара из базы и переводим на главную страницу 
-    Если ответ нет - то отменяем действие.
+    При нажатии на “удалить” - нужно вывести сообщение «вы уверены что хотите удалить этот товар?”<br>
+    (В этом поможет функция confirm)<br>
+    Читаем про конфирм https://learn.javascript.ru/alert-prompt-confirm<br>
+    Если человек ответит да - то мы делаем удаление именно этого товара из базы и переводим на главную страницу <br>
+    Если ответ нет - то отменяем действие.<br>
 </div>
 <h4><div>Решение</div></h4>
+<div class="content">
 <table border="2">
     <tr>
         <td>id</td>
@@ -50,6 +56,14 @@
         </form>
     {% endfor %}
 </table>
+</div>
+<form action="/backcreate13/" method="post">
+    {% csrf_token %}
+    <input type="text" name="name" value="" placeholder="Введите название товара">
+    <input type="text" name="price" value="" placeholder="Введите цену">
+    <input type="text" name="sale" value="" placeholder="Введите скидку">
+    <button>Добавить</button>
+</form>
 <script>
     function sendTell(test) {
         var test2=confirm('удалить этот товар?')

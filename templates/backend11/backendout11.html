@@ -1,13 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'base.html' %}
+
+{% block content %}
+
 <div>страница конец регистрации</div>
 <div><h3><p class="xlarge center">Регистрация прошла успешно</p></h3></div>
+    Ваш логин: <div style="font-weight: bolder;">{{ site_users }}</div>
+    Ваш пароль: <div style="font-weight: bolder;">{{ site_pass }}</div>
 
-
-</body>
-</html>
+{%  endblock content %}
