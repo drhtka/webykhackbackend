@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block title %}<title>BackendOut 18</title>{% endblock title %}
+{% block content %}
+
+    <div style="color: #003366; margin-bottom: 20px;">Страница администрирования</div>
+
+    <table border="2">
+        <tr>
+            <td>id</td>
+            <td>название</td>
+            <td>цена</td>
+            <td>скидка</td>
+            <td>категория</td>
+            <td>изменить</td>
+
+        </tr>
+        {% for all_goods_s in all_goods %}
+            <tr>
+                <td>{{ all_goods_s.0 }}</td>
+                <td>{{ all_goods_s.1 }}</td>
+                <td>{{ all_goods_s.2 }}</td>
+                <td>{{ all_goods_s.3 }}</td>
+                <td>{{ all_goods_s.4 }}</td>
+                <form action="/backendedit18" method="post">
+                    <td><div><input type="text" name="edit_name" value="" placeholder="новая категория" /></div></td>
+                    <td>
+                        {% csrf_token %}
+                        <button value="{{ all_goods_s.4 }}" name="name"> Сохранить изменения</button></li>
+
+                    </td>
+                </form>
+            </tr>
+
+        {% endfor %}
+
+    </table>
+    <div style="font-size: 20px; color: #447e9b"><a style="font-size: 20px; color: red;  margin-left: 500px;" href="{% url 'backend18' %}">Страница товаров</a></div>
+
+{% endblock content %}
+
