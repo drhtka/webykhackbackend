@@ -39,6 +39,7 @@ from backend15.views import Backend15View, Backend15OutView
 from backend16.views import Backend16View, Backend16OutView
 from backend17.views import Backend17View, Backend17OutView, Backend17EditView
 from backend18.views import Backend18View, Backend18OutView, Backend18EditView
+from backend19.views import Backend19View, Backend19OutView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -101,6 +102,9 @@ urlpatterns = [
     path('backend18/', Backend18View.as_view(), name='backend18'),
     path('backendout18', Backend18OutView.as_view(), name='backendout18'),
     path('backendedit18', Backend18EditView.as_view(), name='backendedit18'),
+
+    path('backend19/', Backend19View.as_view(), name='backend19'),
+    path('backendout19', Backend19OutView.as_view(), name='backendout19'),
 
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 if settings.DEBUG:
