@@ -1,18 +1,128 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-111111111111111
-<div><h3><p class="xlarge center">Привет</p></h3></div>
-<form action="/backendout/" method="post">
-    {% csrf_token %}
-    <ul id = "myUL"> </ul>
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}<title>Backend 1</title>{% endblock title %}
+{% block content %}
+    <style>
+        button{
+            color: #fff;
+            background: #FFA500;
+            padding: 5px;
+            border-radius: 5px;
+            border: 2px solid #FF8247;
+        }
 
-    <input name='name_phone' type="text" placeholder="Введите имя" value="" />
-    <button>искать</button>
+        /*modal*/
+        .myModal{
+            background: lightgray;
+            width: 400px;
+            height: 300px;
+            {#margin: 0 auto;#}
+            display: none;
+            margin-left: 600px;
+            margin-top: -500px;
+            border-radius: 10px;
+            border: 1px solid red;
+        }
+        /*Class open close modal*/
+        .visible{
+            display: block;
+        }
+
+        /* Modal Content */
+        .modalContent{
+            margin-left: 30px;
+            padding: 40px;
+            width: 80%;
+
+        }
+        /*close modal*/
+        #close{
+            color: white;
+            float: right;
+            cursor: pointer;
+            margin-right: 5px;
+        }
+        .modalContent input {
+            width: 80%;
+            height: 39px;
+            {#margin: 0 auto;#}
+            {#margin-top: 0px;#}
+            margin-top: 10px;
+            display: block;
+            padding-left: 15px;
+        }
+    </style>
+<div><h3><p class="xlarge center">Привет</p></h3></div>
+    <div>
+        <h3><div>Задача 1</div></h3>
+        <div>     Итак мы сегодня делаем форму обратной связи! Делаем в виде модалки - т е<br>
+            что такое вспоминаем модальное окно<br>
+            (блок , который спрятан - а при нажатии кнопки - появляется)<br>
+            В ней три поля</div>
+        <div class="img_todo"><img src='{% static "backend1/img/feedback_form.png" %}' height="200" width="200" alt="imag"></div>
+
+    </div>
+
+    <h3><div>Задача 2</div></h3>
+    После нажатия - Оформить заказ - - проверяем поля на пустоту , и если<br>
+    хоть одно из них незаполнено - красим его красной рамкой<br>
+    А если все хорошо - перевести пользователя на другую страницу<br>
+    (переводим куда угодно - не принципиально)<br>
+
+
+    </div>
+
+    <button onclick="openModal()">формить заказ</button>
+    <div class="myModal">
+        <div id="close" onclick="closeModal()">x</div>
+        <div class="modalContent">
+            <form action="/backendout1" method="post" onsubmit="chekForm(this,event)">
+                {% csrf_token %}
+                <input type="text" value="" name="fio" placeholder="Фамилия, имя, отчество *">
+                <input type="text" value="" name="tel" placeholder="Телефон (например: +7 xxx xxx xx xx) *">
+                <input type="text" value="" name="mail" placeholder="Электронная почта *">
+            <input type="submit">
+        </div>
+    </div>
+
 </form>
-</body>
-</html>
+    <script>
+        function closeModal() {
+            document.getElementsByClassName('myModal')[0].classList.remove('visible')
+        }
+
+        function openModal() {
+            document.getElementsByClassName('myModal')[0].classList.add('visible')
+
+        }
+
+        function chekForm(x, event) {
+            //alert(123)
+            console.log(event)
+            if (document.getElementsByName('fio')[0].value.length == 0){
+                document.getElementsByName('fio')[0].style.border = '1px solid red';
+                {#alert('Поле телефона не заполнено');#}
+                event.preventDefault()
+            }else{
+                document.getElementsByName('fio')[0].style.border = '1px solid green';
+                if (document.getElementsByName('tel')[0].value.length == 0){
+                    document.getElementsByName('tel')[0].style.border = '1px solid red';
+                    {#alert('Поле Телефон не заполнено');#}
+                    event.preventDefault()
+                } else{
+                    document.getElementsByName('tel')[0].style.border = '1px solid green';
+                    if (document.getElementsByName('mail')[0].value.length == 0 ){
+                        document.getElementsByName('mail')[0].style.border = '1px solid red';
+                        {#alert('Поле Почта не заполнено');#}
+                        event.preventDefault()
+                    }
+                }
+            }
+
+
+        }
+    </script>
+
+{% endblock content %}
+
+

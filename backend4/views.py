@@ -11,9 +11,9 @@ class Backend4View(View):
     def get(self, request):
 
         request.session['my_list'] = []
-        tmp_my_array = [{'id': 1, 'name': 'iphone7 ', 'price': 700},
-                    {'id': 3, 'name': 'iphone6 ', 'price': 400},
-                    {'id': 2, 'name': 'iphoneX ', 'price': 600}]
+        tmp_my_array = [{'id': 1, 'name': 'iphone7 ', 'price': 700, 'view': 5},
+                    {'id': 3, 'name': 'iphone6 ', 'price': 400, 'view': 1},
+                    {'id': 2, 'name': 'iphoneX ', 'price': 600, 'view': 3}]
 
         request.session['my_list'] = [tmp_my_array]
         #print(request.session['my_list'][0])

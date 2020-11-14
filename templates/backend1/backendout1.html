@@ -1,20 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-2222222222222
-<div><h3><p class="xlarge center">Описание товаров</p></h3></div>
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}<title>Backend 1</title>{% endblock title %}
+{% block content %}
+
+<div><h3><p class="xlarge center">Ваши данные</p></h3></div>
 <ul id = "myUL">
 
-    <div>Номер: {{ out_array.0 }}</div>
-    <div>Название: {{ out_array.1 }}</div>
-    <div>Цена: {{ out_array.2 }}</div>
-    <div>Просмтотры: {{ out_array.3 }}</div>
+    <div>Фио: {{ out_array.0 }}</div>
+    <div>Телефлн: {{ out_array.1 }}</div>
+    <div>Почта: {{ out_array.2 }}</div>
+
+
 
 </ul>
 
-</body>
-</html>
+{% endblock content %}

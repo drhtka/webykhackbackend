@@ -46,7 +46,7 @@ urlpatterns = [
     path('', IndexView.as_view(), name='index'),
 
     path('backend1/', Backend1View.as_view(), name='backend1'),
-    path('backendout1/', Backend1OutView.as_view(), name='backendout1'),
+    path('backendout1', Backend1OutView.as_view(), name='backendout1'),
 
     path('backend2/', Backend2View.as_view(), name='backend2'),
     path('backendout2', Backend2OutView.as_view(), name='backendout2'),
