@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block title %}<title>BackendOut 18</title>{% endblock title %}
+{% block content %}
+<div><a href="{% url 'backend21' %}" style="font-size: large; margin-bottom: 20px;">Назад</a></div>
+    <table border="2" style="margin-top: 10px;">
+        <tr>
+            <td>id</td>
+            <td>название</td>
+            <td>цена</td>
+            <td>скидка</td>
+            <td>категория</td>
+
+        </tr>
+        {% for all_goods_s in all_goods %}
+            <tr>
+                <td>{{ all_goods_s.0 }}</td>
+                <td>{{ all_goods_s.1 }}</td>
+                <td>{{ all_goods_s.2 }}</td>
+                <td>{{ all_goods_s.3 }}</td>
+                <td>{{ all_goods_s.4 }}</td>
+
+            </tr>
+
+        {% endfor %}
+
+    </table>
+
+{% endblock content %}
+

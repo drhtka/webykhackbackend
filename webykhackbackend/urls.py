@@ -40,13 +40,16 @@ from backend16.views import Backend16View, Backend16OutView
 from backend17.views import Backend17View, Backend17OutView, Backend17EditView
 from backend18.views import Backend18View, Backend18OutView, Backend18EditView
 from backend19.views import Backend19View, Backend19OutView
+from backend20.views import Backend20View, Backend20OutView, Backend20DelView
+from backend21.views import Backend21View, Backend21OutView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', IndexView.as_view(), name='index'),
 
     path('backend1/', Backend1View.as_view(), name='backend1'),
-    path('backendout1', Backend1OutView.as_view(), name='backendout1'),
+    path('backendout1'
+         '', Backend1OutView.as_view(), name='backendout1'),
 
     path('backend2/', Backend2View.as_view(), name='backend2'),
     path('backendout2', Backend2OutView.as_view(), name='backendout2'),
@@ -105,6 +108,13 @@ urlpatterns = [
 
     path('backend19/', Backend19View.as_view(), name='backend19'),
     path('backendout19', Backend19OutView.as_view(), name='backendout19'),
+
+    path('backend20/', Backend20View.as_view(), name='backend20'),
+    path('backendout20', Backend20OutView.as_view(), name='backendout20'),
+    path('backenddel20', Backend20DelView.as_view(), name='backenddel20'),
+
+    path('backend21/', Backend21View.as_view(), name='backend21'),
+    path('backendout21', Backend21OutView.as_view(), name='backendout21'),
 
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 if settings.DEBUG:

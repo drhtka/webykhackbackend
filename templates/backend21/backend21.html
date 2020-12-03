@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+{% block title %}<title>Backend 18</title>{% endblock title %}
+{% block content %}
+    <style>
+        div{
+            text-align: left;
+            word-wrap: normal;
+        }
+    </style>
+    <div>Страница товаров</div>
+
+    <h2>Фильтрация при двух условиях</h2>
+    <div>
+        <h3><div>Задача 1</div></h3>
+        <p class="serif">Создать в базе данных таблицу товаров: </p>
+        <h4>
+            <div>id</div>
+            <div>tovarname</div>
+            <div>price</div>
+            <div>sale</div>
+            <div>category</div></h4>
+
+        <div>Пусть будет всего  три товара у нас там.<br>
+        Сделать форму авторизации поль-ля.<br>
+        Если юзер ввел логин ivan и пароль 123456<br>
+        то запоминаем его в куки или сессию.<br>
+        Иначе - не авторизовуем его<br>
+    </div>
+
+        </div>
+
+        <h3><div>Задача 2</div></h3>
+        Вывести на главной странице проекта список(массив) этих товаров из бд с названиями категории, именем товара и ценой<br>
+        Но<br>
+        если юзер у нас авторизован - ему мы должны показывать товары с ценами на 5% ниже, чем если юзер неавторизован<br>
+    </div>
+    <h4><div>Решение</div></h4>
+    <div style="color: #003366; margin-bottom: 20px;">Страница товаров</div>
+    <table border="2">
+        <tr>
+            <td>id</td>
+            <td>название</td>
+            <td>цена</td>
+            <td>категория</td>
+
+
+        </tr>
+        <div>Вы зашли без регистрации</div>
+
+        <div>Регистрация:</div>
+        <form action="{% url 'backendout21' %}" method="post">
+            {% csrf_token %}
+            <input type="text" value="" name="login" placeholder="login" >
+            <input type="text" value="" name="email" placeholder="email">
+            <input type="submit" value="Зарег">
+        </form>
+
+        {% for all_goods_s in all_goods %}
+            <tr>
+                <td>{{ all_goods_s.0 }}</td>
+                <td>{{ all_goods_s.1 }}</td>
+                <td>{{ all_goods_s.2 }}</td>
+                <td>{{ all_goods_s.4 }}</td>
+
+            </tr>
+        {% endfor %}
+
+    </table>
+
+
+
+
+{% endblock content %}
