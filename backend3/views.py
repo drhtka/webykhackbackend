@@ -17,7 +17,7 @@ class Backend3OutView(View):
     def get(self, request):
 
 
-        #request.session['my_listt'] = []
+        request.session['my_listt'] = []
         # if request.session['my_listt']: # если есть сессия вносим данные
         print(request.session.get('my_listt'))
         print('test')

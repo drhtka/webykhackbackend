@@ -77,7 +77,7 @@
                 <td>{{ my_arr_s.2 }}</td>
                 <td>{{ my_arr_s.3 }}</td>
                 <td>{{ my_arr_s.4 }}</td>
-                <td><a href="http://127.0.0.1:8888/backenddel20?i={{ my_arr_s.0 }}">удалить</a></td>
+                <td><a href="{% url 'backenddel20' %}?i={{ my_arr_s.0 }}">удалить</a></td>
             </tr>
         {% endfor %}
     </table>
