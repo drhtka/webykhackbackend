@@ -59,6 +59,7 @@ INSTALLED_APPS = [
     'backend19.apps.Backend19Config',
     'backend20.apps.Backend20Config',
     'backend21.apps.Backend21Config',
+    'backend22.apps.Backend22Config',
     'index.apps.IndexConfig',
 ]
 

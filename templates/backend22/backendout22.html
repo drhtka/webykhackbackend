@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block title %}<title>BackendOut 22</title>{% endblock title %}
+{% block content %}
+<div><a href="{% url 'backend22' %}" style="font-size: large; margin-bottom: 20px;">Назад</a></div>
+    <div style="color: #003366; margin-bottom: 20px;">Страница сравнения товаров</div>
+    <table border="2">
+
+    </table>
+    <div class="table-two">
+        <table border="2">
+            <tr>
+                <td>Номер</td>
+                <td>название</td>
+                <td>цена</td>
+                <td>скидка</td>
+                <td>категория</td>
+                <td>описание</td>
+
+
+            </tr>
+            {% for my_arr_s in my_arr %}
+                <tr style="text-align: center">
+                    <td>{{ my_arr_s.0 }}</td>
+                    <td>{{ my_arr_s.1 }}</td>
+                    <td>{{ my_arr_s.2 }}</td>
+                    <td>{{ my_arr_s.3 }}</td>
+                    <td>{{ my_arr_s.4 }}</td>
+                    <td>{{ my_arr_s.5 }}</td>
+
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+
+
+{% endblock content %}
+
