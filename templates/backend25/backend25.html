@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+{% block title %}<title>Backend 25</title>{% endblock title %}
+{% block content %}
+    <style>
+        div{
+            text-align: left;
+            word-wrap: normal;
+        }
+    </style>
+    <div>Страница товаров</div>
+
+    <h2>Доп коммент</h2>
+    <div>
+        <h3><div>Задача 1</div></h3>
+        <p class="serif">Создать в базе данных таблицу товаров: </p>
+        <h4>
+            <div>id</div>
+            <div>prodname</div>
+            <div>price</div>
+            <div>sale</div>
+            <div>category</div>
+            <div>comment</div></h4>
+            <div>comment-extra</div></h4>
+
+        <div>делаем список товаров и сохраняем опции каждого товара<br>
+            и выводим на экран товары а под ними комменты:<br>
+            при нажатии на сравнить добавляем в сессию товары<br>
+            инпут для ввода коммента и доп коммента<br>
+            кнопку добавить<br>
+    </div>
+
+        </div>
+        <h3><div>Задача 2</div></h3>
+    При нажатии кнопки добавить , в базе нужно запомнить и новые комменты, которые юзер сделал.<br>
+    А при выводе на экран выводить их с подзаголовком:<br>
+    Пример:
+    • коммент 1
+    --  “прикольный товар”
+    • коммент 2
+    -- “товар понравился”
+
+    </div>
+    <h4><div>Решение</div></h4>
+    <div style="color: #003366; margin-bottom: 20px;">Страница товаров</div>
+{#    <div style="color: #003366; margin-bottom: 20px;"><a href="{% url 'backendcompare22' %}">Страница сравненияя товаров</a></div>#}
+    <table border="2">
+        <tr>
+            <td>id</td>
+            <td>название</td>
+            <td>цена</td>
+            <td>скидка</td>
+            <td>категория</td>
+            <td>коммент</td>
+            <td>доп коммент</td>
+
+
+
+        </tr>
+
+
+        {% for all_goods_s in all_goods %}
+            <tr>
+                <td>{{ all_goods_s.0 }}</td>
+                <td>{{ all_goods_s.1 }}</td>
+                <td>{{ all_goods_s.2 }}</td>
+                <td>{{ all_goods_s.3 }}</td>
+                <td>{{ all_goods_s.4 }}</td>
+                <form action="/backendout25/" method="post">
+                    <td><input value="{{ all_goods_s.5 }}" type="text" name="comments_o" placeholder="добавьте отзыв"></td>
+                    <td><input value="{{ all_goods_s.6 }}" type="text" name="comments_t" placeholder="доп отзыв"></td>
+                    <td><button value="{{ all_goods_s.0 }}" name="i">отзыв</button></td>
+                    {% csrf_token %}
+                </form>
+
+            </tr>
+        {% endfor %}
+
+    </table>
+
+
+
+
+{% endblock content %}

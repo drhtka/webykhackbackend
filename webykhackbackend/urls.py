@@ -43,7 +43,8 @@ from backend19.views import Backend19View, Backend19OutView
 from backend20.views import Backend20View, Backend20OutView, Backend20DelView
 from backend21.views import Backend21View, Backend21OutView
 from backend22.views import Backend22View, Backend22OutView, Backend22CompareView
-
+from backend24.views import Backend24View, Backend24OutView, Backend24CompareView
+from backend25.views import Backend25View, Backend25OutView, Backend25CompareView
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', IndexView.as_view(), name='index'),
@@ -123,6 +124,14 @@ urlpatterns = [
     path('backend22/', Backend22View.as_view(), name='backend22'),
     path('backendout22', Backend22OutView.as_view(), name='backendout22'),
     path('backendcompare22', Backend22CompareView.as_view(), name='backendcompare22'),
+
+    path('backend24/', Backend24View.as_view(), name='backend24'),
+    path('backendout24/<int:pk>/', Backend24OutView.as_view(), name='backendout24'),
+    path('backendcompare24', Backend24CompareView.as_view(), name='backendcompare24'),
+
+    path('backend25/', Backend25View.as_view(), name='backend25'),
+    path('backendout25/', Backend25OutView.as_view(), name='backendout25'),
+    path('backendcompare25', Backend25CompareView.as_view(), name='backendcompare25'),
 
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 if settings.DEBUG:

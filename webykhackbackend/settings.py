@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'index.apps.IndexConfig',
     'backend1.apps.Backend1Config',
     'backend2.apps.Backend2Config',
     'backend3.apps.Backend3Config',
@@ -60,7 +61,9 @@ INSTALLED_APPS = [
     'backend20.apps.Backend20Config',
     'backend21.apps.Backend21Config',
     'backend22.apps.Backend22Config',
-    'index.apps.IndexConfig',
+    'backend24.apps.Backend24Config',
+    'backend25.apps.Backend25Config',
+
 ]
 
 MIDDLEWARE = [

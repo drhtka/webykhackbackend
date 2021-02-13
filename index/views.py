@@ -7,5 +7,8 @@ from django.views.generic.base import View
 
 class IndexView(View):
     def get(self, request):
-        #return HttpResponse('test')
+        request.session['my_listwtwo'] = []
+        request.session['my_list'] = []
+
+    #return HttpResponse('test')
         return render(request, 'index/index.html')
