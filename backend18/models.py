@@ -2,12 +2,15 @@
 from django.db import models
 
 # Create your models here.
-class CreateDb(models.Model):
+class CreateDb18(models.Model):
     id = models.AutoField(primary_key=True, auto_created=True, null=False)
     tovarname = models.CharField(max_length=30, blank=True, null=True)
     price = models.CharField(max_length=30, blank=True, null=True)
     sale = models.CharField(max_length=30, blank=True, null=True)
     category = models.CharField(max_length=30, blank=True, null=True)
+
+    def get_absolute_url(self):
+        return reverse("backendoutpk19", kwargs={"id" : self.id})
 
     class Meta:
         #managed = True

@@ -39,7 +39,33 @@
     <div style="color: #003366; margin-bottom: 20px;">Страница товаров</div>
     <table border="2">
         <tr>
-            <td>id</td>
+            <td>Простой id</td>
+            <td>название</td>
+            <td>цена</td>
+            <td>скидка</td>
+            <td>категория</td>
+            <td>Посмотреть</td>
+{#            'id', 'tovarname', 'price', 'price', 'category'#}
+        </tr>
+        {% for all_goods_s in all_goods_main %}
+            <tr>
+                <td>{{ all_goods_s.id }}</td>
+                <td>{{ all_goods_s.tovarname }}</td>
+                <td>{{ all_goods_s.price }}</td>
+                <td>{{ all_goods_s.sale }}</td>
+                <td>{{ all_goods_s.category }}</td>
+                <form action="{% url 'backendoutpk19'  pk=all_goods_s.id %}" method="get">
+                    <td><a href="{% url 'backendoutpk19' pk=all_goods_s.id %}">Нажать</a></td>
+                </form>
+            </tr>
+        {% endfor %}
+
+    </table>{% comment %}{% endcomment %}
+
+    <h4><div>Изменненый</div></h4>
+    <table border="2">
+        <tr>
+            <td>Изменненый id</td>
             <td>название</td>
             <td>цена</td>
             <td>скидка</td>

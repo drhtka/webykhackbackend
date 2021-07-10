@@ -39,7 +39,7 @@ from backend15.views import Backend15View, Backend15OutView
 from backend16.views import Backend16View, Backend16OutView
 from backend17.views import Backend17View, Backend17OutView, Backend17EditView
 from backend18.views import Backend18View, Backend18OutView, Backend18EditView
-from backend19.views import Backend19View, Backend19OutView
+from backend19.views import Backend19View, Backend19OutView, Backend19OutPKView
 from backend20.views import Backend20View, Backend20OutView, Backend20DelView
 from backend21.views import Backend21View, Backend21OutView
 from backend22.views import Backend22View, Backend22OutView, Backend22CompareView
@@ -110,6 +110,7 @@ urlpatterns = [
 
     path('backend19/', Backend19View.as_view(), name='backend19'),
     path('backendout19', Backend19OutView.as_view(), name='backendout19'),
+    path('backendoutpk19/<int:pk>/', Backend19OutPKView.as_view(), name='backendoutpk19'),
 
     path('backend20/', Backend20View.as_view(), name='backend20'),
     path('backendout20', Backend20OutView.as_view(), name='backendout20'),
