@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    {% block title %}<title>Title</title>{% endblock title %}
+    {% block title %}<title>Главная</title>{% endblock title %}
     <link rel="stylesheet" href="{% static 'index/css/index.css' %} ">
 
     {% block sdn %}
@@ -15,7 +15,7 @@
 {#        font-weight: bolder;#}
 {#    }#}
 {#</style>#}
-<h2><p class="go_main"><a href="{% url "index" %}" >Перейти на главную</a></p> </h2>
+<h2><p class="go_main"><a href="{% url "index" %}" >Главная</a></p> </h2>
 {% block content %}
 {%  endblock content %}
 </body>
