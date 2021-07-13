@@ -9,8 +9,7 @@ class CreateDb18(models.Model):
     sale = models.CharField(max_length=30, blank=True, null=True)
     category = models.CharField(max_length=30, blank=True, null=True)
 
-    def get_absolute_url(self):
-        return reverse("backendoutpk19", kwargs={"id" : self.id})
+
 
     class Meta:
         #managed = True

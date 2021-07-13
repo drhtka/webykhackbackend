@@ -54,8 +54,12 @@
                 <td>{{ all_goods_s.price }}</td>
                 <td>{{ all_goods_s.sale }}</td>
                 <td>{{ all_goods_s.category }}</td>
-                <form action="{% url 'backendoutpk19'  pk=all_goods_s.id %}" method="get">
-                    <td><a href="{% url 'backendoutpk19' pk=all_goods_s.id %}">Нажать</a></td>
+
+{#                <form action="{% url 'backendoutpk19'  pk=all_goods_s.id %}" method="get">#}
+{#                    <td><a href="{% url 'backendoutpk19' pk=all_goods_s.id %}">Нажать</a></td>#}
+{#                </form>#}
+                <form action="{{ all_goods_s.get_absolute_url }}" method="get">
+                    <td><a href="{{ all_goods_s.get_absolute_url }}">Нажать</a></td>
                 </form>
             </tr>
         {% endfor %}
