@@ -1,11 +1,16 @@
+{% load static %}
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Backend13</title>
+    <link rel="stylesheet" href="{% static 'index/css/index.css' %} ">
 </head>
 <body>
 <div>Страница товаров</div>
+<h2><p class="go_main"><a href="{% url "index" %}" >Главная</a></p> </h2>
 
 <h3>Вывод скидки на страницу</h3>
 <div>
@@ -38,7 +43,7 @@
             {% csrf_token %}
 
             <tr>
-            <ul><li class="checked"><td><div>{{ all_goods_s.0 }}</div></td></li></ul>
+            <td><div>{{ all_goods_s.0 }}</div></td>
                 <td><div>{{ all_goods_s.1 }}</div></td>
                 <td><div>{{ all_goods_s.2 }}</div></td>
                 <td><div>{{ all_goods_s.3 }}</div></td>

@@ -5,7 +5,10 @@
     justify-content: space-between;
     padding: 0 5px;
 }
-html { overflow-x: hidden; }
+/*убрать скрол scroll*/
+/*html { overflow-x: hidden; }*/
+
+
 .content_index_child{
     width: 50%;
     margin-left: 5%;
@@ -98,4 +101,9 @@ body{
     font-weight: bolder;
     margin-left: 48%;
     margin-top: 39px;
+}
+
+.panel-heading{
+    word-wrap: break-word;
+    width: 50%;
 }

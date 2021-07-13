@@ -1,3 +1,6 @@
+{% load static %}
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,12 +10,18 @@
     display: block;
 }
     </style>
+    <link rel="stylesheet" href="{% static 'index/css/index.css' %} ">
+
     <title>Backend13</title>
+
 </head>
 <body>
+<h2><p class="go_main"><a href="{% url "index" %}" >Главная</a></p> </h2>
+
 <div>Страница товаров</div>
 
 <h2>Удаление из базы данных по нажатию на кнопки</h2>
+
 <div>
     <h3><div>Задача 1</div></h3>
     <p class="serif">Создать в базе данных таблицу товаров: </p>
@@ -56,7 +65,9 @@
         </form>
     {% endfor %}
 </table>
-</div>
+</div><br>
+<div style="color: #003366">Добавить товар</div>
+<br>
 <form action="/backcreate13/" method="post">
     {% csrf_token %}
     <input type="text" name="name" value="" placeholder="Введите название товара">
