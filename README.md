@@ -1,6 +1,8 @@
 
 [Индивидуальные OnLine уроки по web технологиям WEBYK](https://www.webyk.in.net/)
 
+![alt text](screenshots/filename.jpg "Описание будет тут")
+
 <h4 align="center">WEBYK ХАКАТОНЫ</h4>
 <p>Еженедельные игры для повышения уровня квалификации Django JS от менторов WEBYK</p>
 <p>Для всех студентов школы индивидуальго обучения</p>
