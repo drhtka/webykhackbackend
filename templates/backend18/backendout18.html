@@ -1,7 +1,8 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block title %}<title>BackendOut 18</title>{% endblock title %}
 {% block content %}
-
+    <div class="container">
     <div style="color: #003366; margin-bottom: 20px;">Страница администрирования</div>
 
     <table border="2">
@@ -35,6 +36,6 @@
 
     </table>
     <div style="font-size: 20px; color: #447e9b"><a style="font-size: 20px; color: red;  margin-left: 500px;" href="{% url 'backend18' %}">Страница товаров</a></div>
-
+    </div>
 {% endblock content %}
 

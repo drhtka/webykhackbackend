@@ -1,21 +1,14 @@
 {% load static %}
-
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
+{% block title %}<title>Backend 13</title>{% endblock title %}
+{% block content %}
+<div class="container">
     <style>
 .content{
     display: block;
 }
     </style>
     <link rel="stylesheet" href="{% static 'index/css/index.css' %} ">
-
     <title>Backend13</title>
-
-</head>
-<body>
 <h2><p class="go_main"><a href="{% url "index" %}" >Главная</a></p> </h2>
 
 <div>Страница товаров</div>
@@ -85,6 +78,5 @@
         }
     }
 </script>
-
-</body>
-</html>
+</div>
+{% endblock %}

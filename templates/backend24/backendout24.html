@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% block title %}<title>BackendOut 24</title>{% endblock title %}
 {% block content %}
+    <div class="container">
 <div><a href="{% url 'backend24' %}" style="font-size: large; margin-bottom: 20px;">Назад</a></div>
     <div style="color: #003366; margin-bottom: 20px;">Страница товара</div>
     <table border="2">
@@ -32,7 +33,7 @@
             {% endfor %}
         </table>
     </div>
-
+    </div>
 
 {% endblock content %}
 

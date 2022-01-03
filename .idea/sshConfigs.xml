@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SshConfigs">
+    <configs>
+      <sshConfig authType="PASSWORD" connectionConfig="{&quot;serverAliveInterval&quot;:300}" host="localhost" id="3b11cec7-66f1-4e1f-84c4-d9407bda9370" port="22" customName="webykhackbackend" nameFormat="CUSTOM">
+        <option name="customName" value="webykhackbackend" />
+      </sshConfig>
+    </configs>
+  </component>
+</project>

@@ -1,6 +1,9 @@
 {% extends 'base.html' %}
+{% load static %}
+
 {% block title %}<title>BackendEdit 8</title>{% endblock title %}
 {% block content %}
+    <div class="container">
 
 
     <h3><div>Страница редактирования</div></h3>
@@ -12,4 +15,5 @@
     <input value="{{ out_array.0 }}" type="hidden" name="id">
     <button>Сохранить</button>
     </form>
+    </div>
 {% endblock content %}

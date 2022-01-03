@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% block title %}<title>Backend 23</title>{% endblock title %}
 {% block content %}
+    <div class="container">
     <style>
         div{
             text-align: left;
@@ -30,7 +31,7 @@
 
         <h3><div>Задача 2</div></h3>
     создать страницу , на которой вывести те товары . которые добавили . На ней выводим рядом эти товары с подробным описанием
-    </div>
+
     <h4><div>Решение</div></h4>
     <div style="color: #003366; margin-bottom: 20px;">Страница товаров</div>
     <div style="color: #003366; margin-bottom: 20px;"><a href="{% url 'backendcompare22' %}">Страница сравненияя товаров</a></div>
@@ -66,6 +67,6 @@
     </table>
 
 
-
+</div>
 
 {% endblock content %}

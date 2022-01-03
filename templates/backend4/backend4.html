@@ -1,6 +1,9 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block title %}<title>Backend 4</title>{% endblock title %}
 {% block content %}
+    <div class="container">
+
     <div>Страница товаров</div>
 
     <h2>Сортировка из сессии</h2>
@@ -62,4 +65,5 @@
     <button>Сортировать</button>
 
 </form>
+    </div>
 {% endblock content %}

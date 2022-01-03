@@ -1,6 +1,6 @@
 .content_index{
     /*display: block;*/
-    width: 1950px;
+    width: 1550px;
     display: flex;
     justify-content: space-between;
     padding: 0 5px;
@@ -10,12 +10,13 @@
 
 
 .content_index_child{
-    width: 50%;
-    margin-left: 5%;
+    width: 61%;
+
 }
 .content_index_child-2{
-    width: 50%;
+    width: 57%;
     margin-right: 2%;
+    margin-left: -143px;
 }
 
 p.serif {
@@ -101,8 +102,8 @@ body{
     font-weight: bolder;
     /*margin-left: 48%;*/
     /*margin-top: 39px;*/
-    position: absolute;
-    margin-left: 701px;
+
+
 }
 
 .panel-heading{

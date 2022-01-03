@@ -1,47 +1,112 @@
-/*.content_index{*/
-/*    display: block;*/
-/*}*/
+.content_index{
+    /*display: block;*/
+    width: 1550px;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 5px;
+}
+/*убрать скрол scroll*/
+/*html { overflow-x: hidden; }*/
 
-/*.error{*/
-/*    border: 1px solid red;*/
-/*}*/
-/*.success{*/
-/*    border: 1px solid green;*/
-/*}*/
-/*.react{*/
-/*    color: red;*/
-/*    font-size: medium;*/
-/*}*/
 
-/*.reactt{*/
-/*    color: red;*/
-/*    font-size: x-large;*/
-/*}*/
+.content_index_child{
+    width: 59%;
+    margin-left: 5%;
+}
+.content_index_child-2{
+    width: 59%;
+    margin-right: 2%;
+    margin-left: -143px;
+}
 
-/*.react7{*/
-/*    color: #660030;*/
-/*}*/
-/*!*dz teact7*!*/
-/*.block{*/
-/*    color: #d21c1c;*/
-/*}*/
+p.serif {
+    font-family: "Times New Roman", Times, serif;
+}
+.color{
+    color: red;
+    margin-left: 3%;
+}
+.accordion {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 50%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+}
 
-/*.wrapper{*/
-/*    display: grid;*/
-/*    grid-template-columns: 200px 200px 200px;*/
-/*    margin-top: 10px;*/
-/*}*/
-/*.wrapper > div {*/
-/*    border: 2px solid #ffa94d;*/
-/*    border-radius: 5px;*/
-/*    background-color: #ffd8a8;*/
-/*    padding: 1em;*/
-/*    color: #d9480f;*/
-/*}*/
-/*.test{*/
-/*    border: 2px solid darkgreen !important;*/
-/*}*/
+.active, .accordion:hover {
+    background-color: rgba(22, 208, 149, 0.5);
+}
 
-/*.go_main{*/
-/*    font-weight: bolder;*/
-/*}*/
+.panel {
+    padding: 0 18px;
+    display: none;
+    background-color: white;
+    overflow: hidden;
+}
+body{
+    margin-left: 1%;
+}
+
+.nerab{
+    color: red;
+    font-weight: bolder;
+}
+
+.error{
+    border: 1px solid red;
+}
+.success{
+    border: 1px solid green;
+}
+.react{
+    color: red;
+    font-size: medium;
+}
+
+.reactt{
+    color: red;
+    font-size: x-large;
+}
+
+.react7{
+    color: #660030;
+}
+/*dz teact7*/
+.block{
+    color: #d21c1c;
+}
+
+.wrapper{
+    display: grid;
+    grid-template-columns: 200px 200px 200px;
+    margin-top: 10px;
+}
+.wrapper > div {
+    border: 2px solid #ffa94d;
+    border-radius: 5px;
+    background-color: #ffd8a8;
+    padding: 1em;
+    color: #d9480f;
+}
+.test{
+    border: 2px solid darkgreen !important;
+}
+
+.go_main{
+    font-weight: bolder;
+    /*margin-left: 48%;*/
+    /*margin-top: 39px;*/
+    position: absolute;
+    margin-left: 701px;
+}
+
+.panel-heading{
+    word-wrap: break-word;
+    width: 50%;
+}

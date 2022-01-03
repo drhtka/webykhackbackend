@@ -1,6 +1,9 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block title %}<title>Backend 6</title>{% endblock title %}
 {% block content %}
+    <div class="container">
+
     <div>Страница товаров</div>
 
     <h2>Поиск товара в сессии</h2>
@@ -50,4 +53,5 @@
     <input type="text" value="" name="name_phone"  placeholder="Введите название">
     <button>искать</button>
     </form>
+    </div>
 {% endblock content %}

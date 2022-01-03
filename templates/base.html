@@ -3,20 +3,42 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    {% block title %}<title>Главная</title>{% endblock title %}
+    {% block title %}<title></title>{% endblock title %}
     <link rel="stylesheet" href="{% static 'index/css/index.css' %} ">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     {% block sdn %}
     {% endblock sdn  %}
 </head>
-<body>
+
 {#<style>#}
 {#    .go_main{#}
 {#        font-weight: bolder;#}
 {#    }#}
 {#</style>#}
-<h2><p class="go_main"><a href="{% url "index" %}" >Главная</a></p> </h2>
+<div class="container">
+{% block header %}
+    <div class="container">
+        <div class="jumbotron">
+            <h1>Игры школы</h1>
+            <p>Backend Django framework , mobile-first projects on the web.</p>
+
+                <h2><p><a class="text-decoration-none go_main" href="{% url "index" %}">Главная</a></p> </h2>
+
+        </div>
+{#        <p>This is some text.</p>#}
+{#        <p>This is another text.</p>#}
+    </div>
+
+{% endblock header %}
+</div>
+
+<body>
+<div class="container">
 {% block content %}
-{%  endblock content %}
+{% endblock content %}
+</div>
 </body>
 </html>

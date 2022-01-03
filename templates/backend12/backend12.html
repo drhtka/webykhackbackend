@@ -1,21 +1,16 @@
+{% extends 'base.html' %}
 {% load static %}
+{% block title %}<title>Backend 12</title>{% endblock title %}
+{% block content %}
+<div class="container">
 
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Backend13</title>
-    <link rel="stylesheet" href="{% static 'index/css/index.css' %} ">
-</head>
-<body>
 <div>Страница товаров</div>
-<h2><p class="go_main"><a href="{% url "index" %}" >Главная</a></p> </h2>
+<h2><p class="go_main"><a href="{% url "index" %}" >Главная</a></p></h2>
 
 <h3>Вывод скидки на страницу</h3>
 <div>
     <h3><div>Задача 1</div></h3>
-    <p class="serif">Создать в базе данных таблицу товаров: </p>
+    <p class="serif">Создать в базе данных таблицу товаров:</p>
     <h3>id
         <div>tovarname</div>
         <div>price</div>
@@ -52,6 +47,5 @@
         </form>
     {% endfor %}
 </table>
-
-</body>
-</html>
+</div>
+{% endblock %}
